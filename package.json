@@ -1,12 +1,16 @@
 {
 	"name": "merge-csv",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "library to join two CSV files together on a key. Also has support to cleanup your records and write to a new CSV",
 	"main": "main.js",
 	"scripts": {
 		"test": "node test/test.js",
 		"build": "tsc",
 		"start": "node main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rlingineni/merge-csv"
 	},
 	"author": "rlingineni",
 	"license": "MIT",
