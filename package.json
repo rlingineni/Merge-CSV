@@ -1,7 +1,7 @@
 {
-	"name": "csvjoin",
+	"name": "merge-csv",
 	"version": "1.0.0",
-	"description": "library to join CSV files together and cleanup and record",
+	"description": "library to join two CSV files together on a key. Also has support to cleanup your records and write to a new CSV",
 	"main": "main.js",
 	"scripts": {
 		"test": "node test/test.js",

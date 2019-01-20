@@ -4,7 +4,7 @@ Use it to join two CSVs on a single key. Also pass in a function to clean up a r
 
 Joining is powered by the node [joiner](https://github.com/mhkeller/joiner) library. Take a look at the tests folder for a demo.
 
-CSVs must have headers.
+**Note:** CSVs must have headers
 
 ```typescript
 import JoinCSV from "JoinCSV";
