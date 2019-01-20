@@ -18,8 +18,8 @@ async function waitForParse() {
 	console.log(csvResult);
 }
 
-function cleanUpRecord(name: string, record: any) {
-	if (name.includes("test1")) {
-		record.prop2 = "my new transformed value";
+function cleanUpRecord(csvNumber: number, record: any) {
+	if (csvNumber == 2) {
+		record["property1"] = "my new cleaned value";
 	}
 }

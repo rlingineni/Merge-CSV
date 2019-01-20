@@ -6,7 +6,7 @@ const joiner = require("joiner");
 export default class JoinCSV {
 	constructor(private csv1: string, private csv2: string, private left1: string, private right1: string) {}
 
-	public async PerformJoin(RecordCleanFunction?: (nameOfCSV: string, record: any) => void): Promise<JoinedData> {
+	public async PerformJoin(RecordCleanFunction?: (csvNum: number, record: any) => void): Promise<JoinedData> {
 		//parse the path to CSV1
 		let parsed1 = await this.parseCSVFile(this.csv1);
 		//console.log(parsed1);
@@ -15,7 +15,7 @@ export default class JoinCSV {
 		if (RecordCleanFunction) {
 			//iterate and pass each record back
 			for (var record of parsed1) {
-				RecordCleanFunction(this.csv1, record);
+				RecordCleanFunction(1, record);
 			}
 		}
 
@@ -26,7 +26,7 @@ export default class JoinCSV {
 		if (RecordCleanFunction) {
 			//iterate and pass each record back
 			for (var record of parsed2) {
-				RecordCleanFunction(this.csv2, record);
+				RecordCleanFunction(2, record);
 			}
 		}
 
