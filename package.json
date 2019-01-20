@@ -1,0 +1,23 @@
+{
+	"name": "csvjoin",
+	"version": "1.0.0",
+	"description": "library to join CSV files together and cleanup and record",
+	"main": "main.js",
+	"scripts": {
+		"test": "node test/test.js",
+		"build": "tsc",
+		"start": "node main.js"
+	},
+	"author": "rlingineni",
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^3.2.4",
+		"json-2-csv": "^3.1.1"
+	},
+	"dependencies": {
+		"@types/node": "^10.12.18",
+		"@types/papaparse": "^4.5.7",
+		"joiner": "^2.1.2",
+		"papaparse": "^4.6.3"
+	}
+}
