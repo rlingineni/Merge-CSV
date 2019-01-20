@@ -1,6 +1,6 @@
 {
 	"name": "merge-csv",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "library to join two CSV files together on a key. Also has support to cleanup your records and write to a new CSV",
 	"main": "main.js",
 	"scripts": {

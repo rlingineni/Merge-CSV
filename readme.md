@@ -1,4 +1,4 @@
-# JOIN CSV
+# Merge CSV
 
 Use it to join two CSVs on a single key. Also pass in a function to clean up a record when the data doesn't line up exactly.
 
