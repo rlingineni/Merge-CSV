@@ -61,7 +61,7 @@ typings/
 .next
 
 # ignore js files
-.js
-.js.map
-.d.ts
+*.js
+*.js.map
+*.d.ts
 
