@@ -4,7 +4,13 @@ let converter = require("json-2-csv");
 const joiner = require("joiner");
 
 export default class JoinCSV {
-	constructor(private csv1: string, private csv2: string, private left1: string, private right1: string) {}
+	constructor(
+		private csv1: string,
+		private csv2: string,
+		private left1: string,
+		private right1: string,
+		private options: CSVJoinOptions = { isFilePath: true }
+	) {}
 
 	public async PerformJoin(RecordCleanFunction?: (csvNum: number, record: any) => void): Promise<JoinedData> {
 		//parse the path to CSV1
@@ -55,9 +61,12 @@ export default class JoinCSV {
 			});
 		});
 	}
-	private parseCSVFile(pathToCSV: string): Promise<any[]> {
-		const file = readFileSync(pathToCSV, "utf8");
-		return new Promise(function(success, error) {
+	private parseCSVFile(csvData: string): Promise<any[]> {
+		let file: string = "";
+		if (this.options.isFilePath) {
+			file = readFileSync(csvData, "utf8");
+		}
+		return new Promise((success, error) => {
 			parse(file, {
 				header: true,
 				complete: results => {
@@ -84,4 +93,8 @@ export interface JoinedData {
 		};
 		prose: { summary: string; full: string };
 	};
+}
+
+export interface CSVJoinOptions {
+	isFilePath: boolean;
 }

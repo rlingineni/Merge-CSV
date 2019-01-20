@@ -4,10 +4,12 @@ Use it to join two CSVs on a single key. Also pass in a function to clean up a r
 
 Joining is powered by the node [joiner](https://github.com/mhkeller/joiner) library. Take a look at the tests folder for a demo.
 
+CSVs must have headers.
+
 ```typescript
 import JoinCSV from "JoinCSV";
 
-let csvJoiner = new JoinCSV(".. path to CSV1", ".. path to CSV 2", "id", "anotherId");
+let csvJoiner = new JoinCSV(".. path to CSV1", ".. path to CSV 2", "id", "anotherId", true); //last option is if the CSV is a path to a file or not
 var result = await csvJoiner.PerformJoin();
 console.log(result);
 ```

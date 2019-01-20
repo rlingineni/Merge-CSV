@@ -13,16 +13,18 @@ let converter = require("json-2-csv");
 waitForParse();
 function waitForParse() {
     return __awaiter(this, void 0, void 0, function* () {
-        let csvJoiner = new main_1.default("/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test1.csv", "/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test2.csv", "num", "id");
+        let csvJoiner = new main_1.default("/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test1.csv", "/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test2.csv", "num", "id", {
+            isFilePath: true
+        });
         var result = yield csvJoiner.PerformJoin(cleanUpRecord);
-        //console.log(JSON.stringify(result.data));
+        console.log(JSON.stringify(result.data));
         var csvResult = yield csvJoiner.convertData2CSV(result.data, "test3.csv");
         console.log(csvResult);
     });
 }
-function cleanUpRecord(name, record) {
-    if (name.includes("test1")) {
-        record.prop2 = "my new transformed value";
+function cleanUpRecord(csvNumber, record) {
+    if (csvNumber == 2) {
+        record["property1"] = "my new cleaned value";
     }
 }
 //# sourceMappingURL=test.js.map

@@ -9,11 +9,14 @@ async function waitForParse() {
 		"/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test1.csv",
 		"/Users/raviteja_lingineni/Documents/Projects/JoinCSV/ts/test/test2.csv",
 		"num",
-		"id"
+		"id",
+		{
+			isFilePath: true
+		}
 	);
 
 	var result = await csvJoiner.PerformJoin(cleanUpRecord);
-	//console.log(JSON.stringify(result.data));
+	console.log(JSON.stringify(result.data));
 	var csvResult = await csvJoiner.convertData2CSV(result.data, "test3.csv");
 	console.log(csvResult);
 }
