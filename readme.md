@@ -9,12 +9,13 @@ Joining is powered by the node [joiner](https://github.com/mhkeller/joiner) libr
 ```typescript
 import JoinCSV from "JoinCSV";
 
-let csvJoiner = new JoinCSV(".. path to CSV1", ".. path to CSV 2", "id", "anotherId", true); //last option is if the CSV is a path to a file or not
+//pass the two files, and the ids to merge on
+let csvJoiner = new JoinCSV(".. path to CSV1", ".. path to CSV 2", "id", "anotherId");
 var result = await csvJoiner.PerformJoin();
 console.log(result);
 ```
 
-### Custom Record Manipulation
+### Cleaning up Records
 
 You can also clean up the data records by passing in a record cleaning up function. Just manipulate the record object so that the data is cleaned when joining. This is run before the join occurs.
 
